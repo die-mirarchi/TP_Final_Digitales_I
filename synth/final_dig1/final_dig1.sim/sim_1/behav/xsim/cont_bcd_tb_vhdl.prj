@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../src/cont_N.vhdl" \
+"../../../../../../src/cont_bcd.vhdl" \
+"../../../../../../src/ffd.vhdl" \
+"../../../../../../src/ffd_s.vhdl" \
+"../../../../../../src/mult.vhdl" \
+"../../../../../../tb/cont_bcd_tb.vhdl" \
+
+# Do not sort compile order
+nosort

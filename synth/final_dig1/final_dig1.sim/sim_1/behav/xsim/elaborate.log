@@ -1,0 +1,17 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d0d8989042d1419fb43bc9cbc16a03ee --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cont_bcd_tb_behav xil_defaultlib.cont_bcd_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling architecture ffd_arq of entity xil_defaultlib.ffd [ffd_default]
+Compiling architecture mult_arq of entity xil_defaultlib.mult [mult_default]
+Compiling architecture ffd_sinc_arq of entity xil_defaultlib.ffd_sinc [ffd_sinc_default]
+Compiling architecture cont_nbit_arq of entity xil_defaultlib.cont_nbit [cont_nbit_default]
+Compiling architecture cont_bcd_arq of entity xil_defaultlib.cont_bcd [cont_bcd_default]
+Compiling architecture cont_bcd_tb_arq of entity xil_defaultlib.cont_bcd_tb
+Built simulation snapshot cont_bcd_tb_behav
