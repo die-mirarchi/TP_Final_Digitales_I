@@ -77,8 +77,8 @@ begin
     next_out => next_aux
   );
   -- Lógica de reset: se activa con reset externo O cuando el contador llega a 9 (1001 en binario)
-  reset  <= (rest_i) or (q0_aux and not q1_aux and not q2_aux and q3_aux);
-  next_o <= (q0_aux and not q1_aux and not q2_aux and q3_aux); -- Conecta la señal de carry del último bit a la salida
+  reset  <= (rest_i) or ((q0_aux and not q1_aux and not q2_aux and q3_aux) and enab_i);
+  next_o <= (q0_aux and not q1_aux and not q2_aux and q3_aux) and enab_i; -- Conecta la señal de carry del último bit a la salida
   -- Conexiones de las salidas del contador BCD
   q_o(0) <= q0_aux;
   q_o(1) <= q1_aux;

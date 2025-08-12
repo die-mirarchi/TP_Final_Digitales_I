@@ -22,7 +22,7 @@ architecture cont_bcd_tb_arq of cont_bcd_tb is
 
 begin
   -- Generación del reloj (periodo de 50ns)
-  clk_tb <= not clk_tb after 5 ns;
+  clk_tb <= not clk_tb after 20 ns;
 
   -- Escenario de prueba
   rst_tb    <= '1' after 10 ns, '0' after 60 ns;
