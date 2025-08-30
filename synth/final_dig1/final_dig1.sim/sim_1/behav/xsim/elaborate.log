@@ -1,7 +1,15 @@
 Vivado Simulator 2018.3
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d0d8989042d1419fb43bc9cbc16a03ee --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot mux_4b_tb_behav xil_defaultlib.mux_4b_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d0d8989042d1419fb43bc9cbc16a03ee --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot rom_tb_behav xil_defaultlib.rom_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture rom_arq of entity xil_defaultlib.ROM [rom_default]
+Compiling architecture rom_arq of entity xil_defaultlib.rom_tb
+Built simulation snapshot rom_tb_behav
