@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TP_Final_Digitales_I/src/rom.vhdl" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ROM'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/TP_Final_Digitales_I/src/vga.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'vga_ctrl'
