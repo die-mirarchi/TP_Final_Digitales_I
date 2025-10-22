@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../src/contador_1.vhdl" \
+"../../../../../../src/Voltimetro.vhdl" \
+"../../../../../../src/cont_330000.vhdl" \
+"../../../../../../src/cont_N.vhdl" \
+"../../../../../../src/cont_bcd.vhdl" \
+"../../../../../../src/ffd.vhdl" \
+"../../../../../../src/ffd_s.vhdl" \
+"../../../../../../src/mux.vhdl" \
+"../../../../../../src/mux_4b.vhdl" \
+"../../../../../../src/rom.vhdl" \
+"../../../../../../src/vga.vhdl" \
+"../../../../../../tb/Voltimetro_tb.vhdl" \
+
+# Do not sort compile order
+nosort

@@ -183,8 +183,8 @@ begin
   -- Salida de video (enmascarada por ventana visible combinacional)
   ----------------------------------------------------------------------------
   video_on <= h_vis_c and v_vis_c;
-  red_o    <= h_vis_c;
-  grn_o    <= v_vis_c;
-  blu_o    <= video_on;
+  red_o    <= video_on and red_i;
+  grn_o    <= video_on and grn_i;
+  blu_o    <= video_on and blu_i;
 
 end architecture;

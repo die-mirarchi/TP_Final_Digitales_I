@@ -62,7 +62,7 @@ begin
     (
       clk_i  => clk_i, -- Conectamos el reloj del sistema
       d_in   => matriz_aux(3)(i), -- La entrada D es el resultado del XOR
-      srst_i => rst_i, -- Reset sincrónico conectado a reset_i
+      srst_i => '0', -- Reset sincrónico conectado a reset_i
       en_i   => reg_en_i, -- Habilitación conectada a en_d_i
       q_out  => q0_out(i) -- Salida conectada a nuestra señal auxiliar
     );
@@ -73,7 +73,7 @@ begin
     (
       clk_i  => clk_i, -- Conectamos el reloj del sistema
       d_in   => matriz_aux(4)(i), -- La entrada D es el resultado del XOR
-      srst_i => rst_i, -- Reset sincrónico conectado a reset_i
+      srst_i => '0', -- Reset sincrónico conectado a reset_i
       en_i   => reg_en_i, -- Habilitación conectada a en_d_i
       q_out  => q1_out(i) -- Salida conectada a nuestra señal auxiliar
     );
@@ -84,7 +84,7 @@ begin
     (
       clk_i  => clk_i, -- Conectamos el reloj del sistema
       d_in   => matriz_aux(5)(i), -- La entrada D es el resultado del XOR
-      srst_i => rst_i, -- Reset sincrónico conectado a reset_i
+      srst_i => '0', -- Reset sincrónico conectado a reset_i
       en_i   => reg_en_i, -- Habilitación conectada a en_d_i
       q_out  => q2_out(i) -- Salida conectada a nuestra señal auxiliar
     );

@@ -2,13 +2,18 @@
 2018.3
 Dec  7 2018
 00:33:28
+D:/TP_Final_Digitales_I/src/Voltimetro.vhdl,1761092500,vhdl,D:/TP_Final_Digitales_I/tb/Voltimetro_tb.vhdl,,,voltimetro,,,,,,,,
+D:/TP_Final_Digitales_I/src/cont_330000.vhdl,1754590407,vhdl,,,,cont_330000,,,,,,,,
 D:/TP_Final_Digitales_I/src/cont_N.vhdl,1753813613,vhdl,,,,cont_nbit,,,,,,,,
+D:/TP_Final_Digitales_I/src/cont_bcd.vhdl,1753990606,vhdl,,,,cont_bcd,,,,,,,,
+D:/TP_Final_Digitales_I/src/contador_1.vhdl,1761097916,vhdl,D:/TP_Final_Digitales_I/src/Voltimetro.vhdl,,,cont_1;types_pkg,,,,,,,,
 D:/TP_Final_Digitales_I/src/ffd.vhdl,1753799732,vhdl,,,,ffd,,,,,,,,
 D:/TP_Final_Digitales_I/src/ffd_s.vhdl,1754577275,vhdl,,,,ffd_sinc,,,,,,,,
 D:/TP_Final_Digitales_I/src/mux.vhdl,1759004525,vhdl,,,,mux,,,,,,,,
-D:/TP_Final_Digitales_I/src/mux_4b.vhdl,1754593696,vhdl,,,,mux_4b,,,,,,,,
+D:/TP_Final_Digitales_I/src/mux_4b.vhdl,1756580323,vhdl,,,,mux_4b,,,,,,,,
 D:/TP_Final_Digitales_I/src/rom.vhdl,1756580347,vhdl,,,,rom,,,,,,,,
-D:/TP_Final_Digitales_I/src/vga.vhdl,1761022564,vhdl,,,,vga_ctrl,,,,,,,,
+D:/TP_Final_Digitales_I/src/vga.vhdl,1761093149,vhdl,,,,vga_ctrl,,,,,,,,
+D:/TP_Final_Digitales_I/tb/Voltimetro_tb.vhdl,1761093337,vhdl,,,,voltimetro_tb,,,,,,,,
 D:/TP_Final_Digitales_I/tb/mux_4b_tb.vhdl,1755271047,vhdl,,,,mux_4b_tb,,,,,,,,
 D:/TP_Final_Digitales_I/tb/rom_tb.vhdl,1756579804,vhdl,,,,rom_tb,,,,,,,,
 D:/TP_Final_Digitales_I/tb/vga_tb.vhdl,1759008148,vhdl,,,,vga_ctrl_tb_wave,,,,,,,,

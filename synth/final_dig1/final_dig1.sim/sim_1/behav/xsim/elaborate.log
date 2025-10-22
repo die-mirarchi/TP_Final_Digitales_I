@@ -1,6 +1,6 @@
 Vivado Simulator 2018.3
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d0d8989042d1419fb43bc9cbc16a03ee --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot vga_ctrl_tb_wave_behav xil_defaultlib.vga_ctrl_tb_wave -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d0d8989042d1419fb43bc9cbc16a03ee --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot voltimetro_tb_behav xil_defaultlib.voltimetro_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -8,10 +8,19 @@ Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package xil_defaultlib.types_pkg
 Compiling architecture ffd_arq of entity xil_defaultlib.ffd [ffd_default]
 Compiling architecture mux_arq of entity xil_defaultlib.mux [mux_default]
 Compiling architecture ffd_sinc_arq of entity xil_defaultlib.ffd_sinc [ffd_sinc_default]
 Compiling architecture cont_nbit_arq of entity xil_defaultlib.cont_nbit [cont_nbit_default]
+Compiling architecture cont_330000_arq of entity xil_defaultlib.cont_330000 [cont_330000_default]
+Compiling architecture cont_bcd_arq of entity xil_defaultlib.cont_bcd [cont_bcd_default]
+Compiling architecture cont_1_arq of entity xil_defaultlib.cont_1 [cont_1_default]
+Compiling architecture mux_4b_arq of entity xil_defaultlib.mux_4b [mux_4b_default]
+Compiling architecture rom_arq of entity xil_defaultlib.ROM [rom_default]
 Compiling architecture vga_ctrl_arq of entity xil_defaultlib.vga_ctrl [vga_ctrl_default]
-Compiling architecture vga_ctrl_tb_wave_arq of entity xil_defaultlib.vga_ctrl_tb_wave
-Built simulation snapshot vga_ctrl_tb_wave_behav
+Compiling architecture voltimetro_arq of entity xil_defaultlib.Voltimetro [voltimetro_default]
+Compiling architecture voltimetro_tb_arq of entity xil_defaultlib.voltimetro_tb
+Built simulation snapshot voltimetro_tb_behav
