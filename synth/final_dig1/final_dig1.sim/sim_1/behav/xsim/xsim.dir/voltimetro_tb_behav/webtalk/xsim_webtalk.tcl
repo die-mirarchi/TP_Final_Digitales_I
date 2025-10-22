@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir D:/TP_Final_Digitales_I/synth/final_dig1/final_dig1.sim/sim_1/behav/xsim/xsim.dir/voltimetro_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Tue Oct 21 22:57:24 2025" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Tue Oct 21 23:16:32 2025" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2018.3 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2405991" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "cb6492b3-bb56-4bd9-aae1-835720ab0e08" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "d0d8989042d1419fb43bc9cbc16a03ee" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "17" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "21" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "AMD Ryzen 7 5800X 8-Core Processor             " -context "user_environment"
@@ -26,7 +26,7 @@ webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
 webtalk_add_data -client xsim -key runtime -value "100 ms" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "2" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "9.73_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "17072_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 4182714567 -regid "" -xml D:/TP_Final_Digitales_I/synth/final_dig1/final_dig1.sim/sim_1/behav/xsim/xsim.dir/voltimetro_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html D:/TP_Final_Digitales_I/synth/final_dig1/final_dig1.sim/sim_1/behav/xsim/xsim.dir/voltimetro_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm D:/TP_Final_Digitales_I/synth/final_dig1/final_dig1.sim/sim_1/behav/xsim/xsim.dir/voltimetro_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "18.20_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "16992_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 94049774 -regid "" -xml D:/TP_Final_Digitales_I/synth/final_dig1/final_dig1.sim/sim_1/behav/xsim/xsim.dir/voltimetro_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html D:/TP_Final_Digitales_I/synth/final_dig1/final_dig1.sim/sim_1/behav/xsim/xsim.dir/voltimetro_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm D:/TP_Final_Digitales_I/synth/final_dig1/final_dig1.sim/sim_1/behav/xsim/xsim.dir/voltimetro_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

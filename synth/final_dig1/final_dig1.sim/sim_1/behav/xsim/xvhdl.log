@@ -1,7 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TP_Final_Digitales_I/src/contador_1.vhdl" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'cont_1'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TP_Final_Digitales_I/src/Voltimetro.vhdl" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'Voltimetro'
-WARNING: [VRFC 10-3093] actual for formal port 'rst_i' is neither a static name nor a globally static expression [D:/TP_Final_Digitales_I/src/Voltimetro.vhdl:190]
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TP_Final_Digitales_I/tb/Voltimetro_tb.vhdl" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'voltimetro_tb'
