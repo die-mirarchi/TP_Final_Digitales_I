@@ -96,8 +96,8 @@ begin
 
   -- Igualdades (binario 10 bits: b9..b0)
   -- 639 = 1001111111
-  h_eq_639 <= h_q(9) and (not h_q(8)) and (not h_q(7)) and h_q(6) and h_q(5) and
-    h_q(4) and h_q(3) and h_q(2) and h_q(1) and h_q(0);
+  --h_eq_639 <= h_q(9) and (not h_q(8)) and (not h_q(7)) and h_q(6) and h_q(5) and
+  --  h_q(4) and h_q(3) and h_q(2) and h_q(1) and h_q(0);
   -- 655 = 1010001111 (baja HS en este ciclo → HS=0 desde x=656)
   h_eq_655 <= h_q(9) and (not h_q(8)) and h_q(7) and (not h_q(6)) and (not h_q(5)) and
     (not h_q(4)) and h_q(3) and h_q(2) and h_q(1) and h_q(0);
@@ -132,8 +132,8 @@ begin
 
   -- Igualdades V
   -- 479 = 0111011111
-  v_eq_479 <= (not v_q(9)) and v_q(8) and v_q(7) and v_q(6) and (not v_q(5)) and
-    v_q(4) and v_q(3) and v_q(2) and v_q(1) and v_q(0);
+  -- <= (not v_q(9)) and v_q(8) and v_q(7) and v_q(6) and (not v_q(5)) and
+  --  v_q(4) and v_q(3) and v_q(2) and v_q(1) and v_q(0);
   -- 489 = 0111101001 (baja VS al fin de línea → VS=0 desde y=490)
   v_eq_489 <= (not v_q(9)) and v_q(8) and v_q(7) and v_q(6) and v_q(5) and
     (not v_q(4)) and v_q(3) and (not v_q(2)) and (not v_q(1)) and v_q(0);
@@ -147,7 +147,7 @@ begin
   v_rst <= v_eq_524;
 
   ----------------------------------------------------------------------------
-  -- HSYNC (sin multiplexores)
+  -- HSYNC 
   -- hs_d = 0 cuando x=655  (HS=0 desde 656..751)
   -- hs_d = 1 cuando x=751  (HS=1 desde 752..)
   -- hs_d = hs_q en el resto
@@ -159,7 +159,7 @@ begin
   hs <= hs_q;
 
   ----------------------------------------------------------------------------
-  -- VSYNC (sin multiplexores, muestreado al fin de línea)
+  -- VSYNC 
   -- vs_d = 0 cuando y=489 & line_pulse  (VS=0 desde 490..491)
   -- vs_d = 1 cuando y=491 & line_pulse  (VS=1 desde 492..)
   -- vs_d = vs_q en el resto
@@ -172,9 +172,9 @@ begin
   vs <= vs_q;
 
   ----------------------------------------------------------------------------
-  -- Ventana visible combinacional (no depende de FF)
-  -- H visible: x < 640  ⇔  (b9=0) OR (b9=1 AND b8=0 AND b7=0)
-  -- V visible: y < 480  ⇔  (b9=0) AND ( (b8=0) OR (b8=1 AND NOT(b7 AND b6 AND b5)) )
+  -- Ventana visible combinacional 
+  -- H visible: x < 640  ->  (b9=0) OR (b9=1 AND b8=0 AND b7=0)
+  -- V visible: y < 480  ->  (b9=0) AND ( (b8=0) OR (b8=1 AND NOT(b7 AND b6 AND b5)) )
   ----------------------------------------------------------------------------
   h_vis_c <= (not h_q(9)) or (h_q(9) and (not h_q(8)) and (not h_q(7)));
   v_vis_c <= (not v_q(9)) and ((not v_q(8)) or (v_q(8) and (not (v_q(7) and v_q(6) and v_q(5)))));
