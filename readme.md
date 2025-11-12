@@ -31,7 +31,7 @@ Se testearon todos los bloques utilizando Vivado a través de los testbench, sie
 
 **Problema:** A la hora de seleccionar en el `mux_4b` a partir de `pixel_x` para saber qué carácter dibujar según la posición en pantalla, se encontraron dificultades para lograr combinacionalmente una salida de 4 bits a partir de la selección.
 
-**Solución:** Se logró empleando un vector de bits que va desde (1,0,0,0,0) hasta (0,0,0,0,1) dependiendo de la posición del selector, y luego conectando el carácter correspondiente (4 bits) a su posición con ANDs y generate, todo en una gran OR, de tal manera que solo queda activa la salida con un '1'. De esta manera se divide horizontalmente en 5 partes de 128 píxeles, que se seleccionan a partir de los 3 bits más significativos de `pixel_x`.
+**Solución:** Se logró empleando un vector de bits que va desde (1,0,0,0,0) hasta (0,0,0,0,1) dependiendo de la posición del selector, y luego conectando el carácter correspondiente (4 bits) a su posición con ANDs y generate, todo en una gran OR, de tal manera que solo queda activa la salida con un '1'. A su vez se dividio horizontalmente en 5 ventanas, ya que se tienen 5 caracteres, de 128 píxeles (selector es de 3 bit), a partir de los 3 bits más significativos de `pixel_x`.
 
 ### 3. Ventanas de sincronismo y video_on
 
@@ -39,7 +39,7 @@ Se testearon todos los bloques utilizando Vivado a través de los testbench, sie
 
 **Solución:** 
 - **video_on:** Se logró pensando que desde 0 hasta un valor se mantiene en '1' y luego baja a '0' hasta que resetea, por lo que planteé la tabla de verdad con los bits más significativos uno a uno hasta lograr por inspección una expresión que cumpla.
-- **Sincronismo:** Se logró utilizando flip-flops D que al llegar a un valor ponían en '1' la entrada del ffd, al llegar a otro valor lo ponían en '0', y en cualquier otro caso mantiene el valor anterior.
+- **Sincronismo:** Se logró utilizando flip-flops D que al llegar a un valor se pone en '1' la entrada del ffd, al llegar a otro valor se pone en '0', y en cualquier otro caso mantiene el valor anterior.
 
 ### 4. Tiempos del VGA en simulación
 
