@@ -124,7 +124,7 @@ architecture Voltimetro_arq of Voltimetro is
   -------------------------------------------------------------------------------------
   component vga_ctrl is
     port (
-      clk     : in bit; -- Reloj de píxel (25.175 MHz típico; en sim podés usar 25 MHz)
+      clk     : in bit; -- Reloj de píxel (25.175 MHz típico)
       red_i   : in bit;
       grn_i   : in bit;
       blu_i   : in bit;
