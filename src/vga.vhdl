@@ -1,11 +1,8 @@
--- Controlador VGA (sin multiplexores) para 640x480@60
--- Horiz: 800 totales → visible 0..639, HS bajo 656..751 (cambia en 655/751), reset en 799
--- Vert : 525 totales → visible 0..479, VS bajo 490..491 (cambia en 489/491), reset en 524
--- Tipos y estilo alineados al proyecto (bit/bit_vector, cont_nbit, ffd_sinc)
+-- Controlador VGA para 640x480 a 60 Hz
 
 entity vga_ctrl is
   port (
-    clk     : in bit; -- Reloj de píxel (25.175 MHz típico; en sim podés usar 25 MHz)
+    clk     : in bit; -- Reloj de píxel (25MHz)
     red_i   : in bit;
     grn_i   : in bit;
     blu_i   : in bit;
@@ -45,7 +42,7 @@ architecture vga_ctrl_arq of vga_ctrl is
   end component;
 
   ---------------------------------------------------------------------------
-  -- Señales de contadores (ripple con cont_nbit)
+  -- Señales de contadores (cont_nbit)
   ---------------------------------------------------------------------------
   signal h_d, h_q, h_next : bit_vector(9 downto 0);
   signal v_d, v_q, v_next : bit_vector(9 downto 0);
@@ -174,13 +171,13 @@ begin
   ----------------------------------------------------------------------------
   -- Ventana visible combinacional 
   -- H visible: x < 640  ->  (b9=0) OR (b9=1 AND b8=0 AND b7=0)
-  -- V visible: y < 480  ->  (b9=0) AND ( (b8=0) OR (b8=1 AND NOT(b7 AND b6 AND b5)) )
+  -- V visible: y < 480  ->  (b9=0) AND ( (b8=0) OR (b8=1 AND NOT(b7=1 AND b6=1 AND b5=1)) )
   ----------------------------------------------------------------------------
   h_vis_c <= (not h_q(9)) or (h_q(9) and (not h_q(8)) and (not h_q(7)));
   v_vis_c <= (not v_q(9)) and ((not v_q(8)) or (v_q(8) and (not (v_q(7) and v_q(6) and v_q(5)))));
 
   ----------------------------------------------------------------------------
-  -- Salida de video (enmascarada por ventana visible combinacional)
+  -- Salida de video
   ----------------------------------------------------------------------------
   video_on <= h_vis_c and v_vis_c;
   red_o    <= video_on and red_i;

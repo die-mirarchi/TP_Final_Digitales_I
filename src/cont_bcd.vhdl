@@ -1,8 +1,8 @@
--- Entidad para un contador BCD (Decimal Codificado en Binario) de 0 a 9
+-- Contador BCD (Decimal Codificado en Binario) de 0 a 9
 entity cont_bcd is
   port (
-    enab_i : in bit; -- Entrada de habilitación para el contador
-    rest_i : in bit; -- Entrada de reset externo
+    enab_i : in bit; -- Entrada de habilitación
+    rest_i : in bit; -- Entrada de reset 
     clck_i : in bit; -- Entrada de reloj
     q_o    : out bit_vector(3 downto 0); -- Salida de 4 bits con el valor BCD
     next_o : out bit -- Salida de carry para poder conectar en cascada
@@ -32,11 +32,11 @@ architecture cont_bcd_arq of cont_bcd is
   signal reset    : bit; -- Reset interno combinado (externo + detección del valor 10)
   signal next_aux : bit; -- Señal auxiliar para el carry de salida
 begin
-  -- Primer contador para el bit 0 (LSB)
+  -- Primer contador para el bit 0
   cont0 : cont_nbit
   port map
   (
-    enable_i => enab_i,
+    enable_i => enab_i, -- Se habilita solo cuando el bit anterior genera carry
     reset_i  => reset,
     clock_i  => clck_i,
     en_d_i   => '1',
@@ -47,7 +47,7 @@ begin
   cont1 : cont_nbit
   port map
   (
-    enable_i => enab_i, -- Se habilita solo cuando el bit anterior genera carry
+    enable_i => enab_i,
     reset_i  => reset,
     clock_i  => clck_i,
     en_d_i   => en0_aux,
@@ -58,27 +58,27 @@ begin
   cont2 : cont_nbit
   port map
   (
-    enable_i => enab_i, -- Se habilita solo cuando el bit anterior genera carry
+    enable_i => enab_i,
     reset_i  => reset,
     clock_i  => clck_i,
     en_d_i   => en1_aux,
     q0_out   => q2_aux,
     next_out => en2_aux
   );
-  -- Cuarto contador para el bit 3 (MSB)
+  -- Cuarto contador para el bit 3 
   cont3 : cont_nbit
   port map
   (
-    enable_i => enab_i, -- Se habilita solo cuando el bit anterior genera carry
+    enable_i => enab_i,
     reset_i  => reset,
     clock_i  => clck_i,
     en_d_i   => en2_aux,
     q0_out   => q3_aux,
     next_out => next_aux
   );
-  -- Lógica de reset: se activa con reset externo O cuando el contador llega a 9 (1001 en binario)
+  -- Se activa con reset externo cuando el contador llega a 9 (1001)
   reset  <= (rest_i) or ((q0_aux and not q1_aux and not q2_aux and q3_aux) and enab_i);
-  next_o <= (q0_aux and not q1_aux and not q2_aux and q3_aux) and enab_i; -- Conecta la señal de carry del último bit a la salida
+  next_o <= (q0_aux and not q1_aux and not q2_aux and q3_aux) and enab_i; -- Carry cuando llega a 1001
   -- Conexiones de las salidas del contador BCD
   q_o(0) <= q0_aux;
   q_o(1) <= q1_aux;

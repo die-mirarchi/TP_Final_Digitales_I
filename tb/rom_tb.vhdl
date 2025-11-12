@@ -5,7 +5,6 @@ entity rom_tb is
 end rom_tb;
 
 architecture rom_arq of rom_tb is
-  -- Component declaration
   component ROM is
     port (
       char_address : in bit_vector(3 downto 0);
@@ -15,18 +14,15 @@ architecture rom_arq of rom_tb is
     );
   end component;
 
-  -- Signals
   signal clk          : std_logic              := '0';
   signal char_address : bit_vector(3 downto 0) := "1010";
   signal font_col     : bit_vector(2 downto 0) := "000";
   signal font_row     : bit_vector(2 downto 0) := "000";
   signal data_out     : bit;
 
-  -- Clock period definition (25MHz = 40ns period)
   constant clk_period : time := 40 ns;
 
 begin
-  -- Instantiate the Unit Under Test (UUT)
   uut : ROM
   port map
   (
@@ -36,7 +32,6 @@ begin
     data_out     => data_out
   );
 
-  -- Clock process
   clk_process : process
   begin
     clk <= '0';
@@ -45,11 +40,9 @@ begin
     wait for clk_period/2;
   end process;
 
-  -- Stimulus process
   stim_proc : process (clk)
   begin
     if rising_edge(clk) then
-      -- Increment font_col
       case font_col is
         when "000" => font_col <= "001";
         when "001" => font_col <= "010";
@@ -60,7 +53,6 @@ begin
         when "110" => font_col <= "111";
         when "111" =>
           font_col <= "000";
-          -- When font_col reaches maximum, increment font_row
           case font_row is
             when "000" => font_row <= "001";
             when "001" => font_row <= "010";
@@ -71,7 +63,6 @@ begin
             when "110" => font_row <= "111";
             when "111" =>
               font_row <= "000";
-              -- When both reach maximum, increment char_address
               case char_address is
                 when "0000" => char_address <= "0001";
                 when "0001" => char_address <= "0010";

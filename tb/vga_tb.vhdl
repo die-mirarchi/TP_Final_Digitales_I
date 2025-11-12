@@ -1,13 +1,7 @@
--- Testbench SIMPLE (sin report/if) para vga_ctrl
--- Estímulo: secuencia de colores para observar hs, vs, red_o, grn_o, blu_o,
---           pixel_x y pixel_y en el visor de formas de onda.
 entity vga_ctrl_tb_wave is
 end;
 
 architecture vga_ctrl_tb_wave_arq of vga_ctrl_tb_wave is
-  --------------------------------------------------------------------------
-  -- DUT
-  --------------------------------------------------------------------------
   component vga_ctrl is
     port (
       clk     : in bit;
@@ -24,9 +18,6 @@ architecture vga_ctrl_tb_wave_arq of vga_ctrl_tb_wave is
     );
   end component;
 
-  --------------------------------------------------------------------------
-  -- Señales TB
-  --------------------------------------------------------------------------
   signal clk_tb     : bit := '0';
   signal red_i_tb   : bit := '0';
   signal grn_i_tb   : bit := '0';
@@ -39,12 +30,9 @@ architecture vga_ctrl_tb_wave_arq of vga_ctrl_tb_wave is
   signal pixel_x_tb : bit_vector(9 downto 0);
   signal pixel_y_tb : bit_vector(9 downto 0);
 
-  constant Tclk : time := 40 ns; -- 25 MHz (usar 39.72 ns si querés 25.175 MHz)
+  constant Tclk : time := 40 ns;
 
 begin
-  --------------------------------------------------------------------------
-  -- Reloj
-  --------------------------------------------------------------------------
   reloj : process
   begin
     clk_tb <= '0';
@@ -53,9 +41,6 @@ begin
     wait for Tclk/2;
   end process;
 
-  --------------------------------------------------------------------------
-  -- Instancia del DUT
-  --------------------------------------------------------------------------
   DUT : vga_ctrl
   port map
   (
@@ -72,47 +57,41 @@ begin
     pixel_y => pixel_y_tb
   );
 
-  --------------------------------------------------------------------------
-  -- Estímulo: ciclo de colores (2 ms cada uno) y fin
-  --------------------------------------------------------------------------
   stim : process
   begin
     loop
-      -- Primarios
       red_i_tb <= '1';
       grn_i_tb <= '0';
       blu_i_tb <= '0';
-      wait for 2 ms; -- R
+      wait for 2 ms;
       red_i_tb <= '0';
       grn_i_tb <= '1';
       blu_i_tb <= '0';
-      wait for 2 ms; -- G
+      wait for 2 ms;
       red_i_tb <= '0';
       grn_i_tb <= '0';
       blu_i_tb <= '1';
-      wait for 2 ms; -- B
-      -- Secundarios
+      wait for 2 ms;
       red_i_tb <= '1';
       grn_i_tb <= '1';
       blu_i_tb <= '0';
-      wait for 2 ms; -- Y
+      wait for 2 ms;
       red_i_tb <= '0';
       grn_i_tb <= '1';
       blu_i_tb <= '1';
-      wait for 2 ms; -- C
+      wait for 2 ms;
       red_i_tb <= '1';
       grn_i_tb <= '0';
       blu_i_tb <= '1';
-      wait for 2 ms; -- M
-      -- Blanco y negro
+      wait for 2 ms;
       red_i_tb <= '1';
       grn_i_tb <= '1';
       blu_i_tb <= '1';
-      wait for 2 ms; -- W
+      wait for 2 ms;
       red_i_tb <= '0';
       grn_i_tb <= '0';
       blu_i_tb <= '0';
-      wait for 2 ms; -- K
+      wait for 2 ms;
     end loop;
   end process;
 

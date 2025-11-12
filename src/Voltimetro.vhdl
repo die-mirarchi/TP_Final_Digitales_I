@@ -1,8 +1,9 @@
 ----------------------------------------------------------------------------------
--- Modulo: 		Voltimetro_toplevel
+-- Modulo: 		  Voltimetro_toplevel
 -- Descripcion: Voltimetro implementado con un modulador sigma-delta
--- Autor: 		Electronica Digital I
---        		Universidad de San Martin - Escuela de Ciencia y Tecnologia
+-- Autor: 		  Diego H. Mirarchi
+--        		  Electronica Digital I
+--        		  Universidad de San Martin - Escuela de Ciencia y Tecnologia
 --
 -- Fecha: 		01/09/2020
 --              Actualizado: 26/05/2025

@@ -25,6 +25,7 @@ architecture cont_330000_arq of cont_330000 is
   signal rst_total, rst_cont    : bit;
 
 begin
+  -- Contador de 19 bits
   rst_total <= rst_cont or rst_i;
   d_vec(0)  <= '1';
   cont_nbin_gen : for i in 0 to 18 generate
@@ -44,7 +45,7 @@ begin
     d_vec(i) <= next_vec(i - 1);
   end generate cont_out_gen;
 
-  -- Reset at 330001 (binary: 1010000100100010001)
+  -- Reseta a 330001 (binario: 1010000100100010001)
   rst_cont <= q_vec(18) and (not q_vec(17)) and q_vec(16) and (not q_vec(15)) and
     (not q_vec(14)) and (not q_vec(13)) and (not q_vec(12)) and q_vec(11) and
     (not q_vec(10)) and (not q_vec(9)) and q_vec(8) and (not q_vec(7)) and
@@ -52,7 +53,7 @@ begin
     (not q_vec(3)) and (not q_vec(2)) and (not q_vec(1)) and q_vec(0);
   q_rst_o <= rst_cont;
 
-  -- Enable at 330000 (binary: 1010000100100010000)
+  -- Habilita a 330000 (binario: 1010000100100010000)
   q_en_o <= q_vec(18) and (not q_vec(17)) and q_vec(16) and (not q_vec(15)) and
     (not q_vec(14)) and (not q_vec(13)) and (not q_vec(12)) and q_vec(11) and
     (not q_vec(10)) and (not q_vec(9)) and q_vec(8) and (not q_vec(7)) and

@@ -2,7 +2,6 @@ entity cont_nbit_tb is
 end;
 
 architecture cont_nbit_tb_arq of cont_nbit_tb is
-  -- Declaración del componente
   component cont_nbit is
     port (
       enable_i : in bit;
@@ -14,7 +13,6 @@ architecture cont_nbit_tb_arq of cont_nbit_tb is
     );
   end component;
 
-  -- Señales del banco de pruebas
   signal clk_tb    : bit := '0';
   signal rst_tb    : bit := '0';
   signal enable_tb : bit := '1';
@@ -23,13 +21,9 @@ architecture cont_nbit_tb_arq of cont_nbit_tb is
   signal next_tb   : bit;
 
 begin
-  -- Generación del reloj (período de 50ns)
   clk_tb <= not clk_tb after 25 ns;
-
-  -- Escenario de prueba
   rst_tb <= '1' after 10 ns, '0' after 60 ns;
 
-  -- Instanciación del componente (Dispositivo Bajo Prueba)
   DUT : cont_nbit
   port map
   (
