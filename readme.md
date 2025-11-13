@@ -23,7 +23,7 @@ Se testearon todos los bloques utilizando Vivado a través de los testbench, sie
 
 ### 1. Frecuencia de muestreo vs. refresco de pantalla
 
-**Problema:** Primero se probó con un contador de 330, asi como con uno de 3300, pero generaba problemas ya que muestreaba más rápido de lo que tardaba en escribir en pantalla. Si el valor cambiaba (sobre todo los últimos dígitos por ruido) en medio del frame, cambiaba a graficar el nuevo valor generando glitches y viéndose ruido.
+**Problema:** Primero se probó con un contador de 330, asi como con uno de 3300, pero generaba problemas ya que muestreaba más rápido de lo que tardaba en escribir en pantalla. Si el valor cambiaba (sobre todo los últimos dígitos por ruido) en medio del frame, cambiaba a graficar el nuevo valor generando glitches y viéndose ruidoso.
 
 **Solución:** Se modificó a un contador de 330000, que muestrea cada 0.0132s, mientras que la pantalla refresca completa en 0.0167s. Esto implica que cada dígito se llega a dibujar completo sin problemas. Quizás lo más seguro sería usar 3300000 para tener mayor estabilidad, pero probando en la práctica con 330000 funcionó bien y no se llegan a percibir glitches.
 
