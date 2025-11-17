@@ -29,17 +29,8 @@ architecture vga_ctrl_tb_wave_arq of vga_ctrl_tb_wave is
   signal blu_o_tb   : bit;
   signal pixel_x_tb : bit_vector(9 downto 0);
   signal pixel_y_tb : bit_vector(9 downto 0);
-
-  constant Tclk : time := 40 ns;
-
 begin
-  reloj : process
-  begin
-    clk_tb <= '0';
-    wait for Tclk/2;
-    clk_tb <= '1';
-    wait for Tclk/2;
-  end process;
+  clk_tb <= not clk_tb after 20 ns;
 
   DUT : vga_ctrl
   port map
