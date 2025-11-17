@@ -50,10 +50,9 @@ begin
   begin
     while true loop
       reg_en_tb <= '0';
-      wait for 13.2001 ms;
+      wait for 13.200 ms;
       reg_en_tb <= '1';
       wait for 40 ns;
     end loop;
   end process;
-  adc_tb <= '1';
 end architecture;
